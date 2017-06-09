@@ -27,7 +27,7 @@ class OrdersController < ApplicationController
   end
 
   def show
-    @order = Order.find(params[:id])
+    @order = Order.find_by_token(params[:id])
     @product_lists = @order.product_lists
   end
 
@@ -53,7 +53,7 @@ class OrdersController < ApplicationController
     flash[:notice] = "已提交申请"
     redirect_to :back
   end
-  
+
   private
 
   def order_params
