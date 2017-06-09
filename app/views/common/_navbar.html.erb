@@ -2,15 +2,16 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/">JDStore </a>
+            <a class="navbar-brand" href="/"> MONSOON </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
              <li class="active">
-               <%= link_to("Products", products_path) %>
+               <%= link_to("首页", products_path) %>
              </li>
+             <li><%= link_to "分类浏览", "#" %></li>
              <li><%= link_to "帮助", static_pages_help_path %></li>
              <li><%= link_to "关于", static_pages_about_path %></li>
             </ul>
@@ -33,11 +34,23 @@
                     <ul class="dropdown-menu">
                          <% if current_user.admin? %>
                            <li>
-                              <%= link_to("Admin 选单", admin_products_path ) %>
+                              <%= link_to("后台管理", "admin_products_path" ) %>
+                           </li>
+                           <li role="separator" class="divider"></li>
+                           <li>
+                              <%= link_to("我的订单", account_orders_path ) %>
                            </li>
                            <li>
-                              <%= link_to("个人订单列表", account_orders_path ) %>
+                             <a href="#">我的收获地址</a>
                            </li>
+                           <li>
+                             <a href="#">我的收藏</a>
+                           </li>
+                           <li role="separator" class="divider"></li>
+                           <li>
+                             <a href="#">个人信息</a>
+                           </li>
+                           <li role="separator" class="divider"></li>
                          <% end %>
                         <li> <%= link_to(content_tag(:i, '登出', class: 'fa fa-sign-out'), destroy_user_session_path, method: :delete) %> </li>
                     </ul>
