@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'sessions/new'
+  end
+
+  namespace :admin do
+    get 'categories/index'
+  end
+
+  namespace :admin do
+    get 'categories/new'
+  end
+
   get 'static_pages/about'
 
   get 'static_pages/help'
@@ -7,7 +19,9 @@ Rails.application.routes.draw do
   root 'products#index'
 
   namespace :admin do
+    root 'sessions#new'
     resources :products
+    resources :categories
     resources :orders do
       member do
         post :cancel

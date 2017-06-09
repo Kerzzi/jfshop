@@ -34,7 +34,8 @@
                     <ul class="dropdown-menu">
                          <% if current_user.admin? %>
                            <li>
-                              <%= link_to("后台管理", "admin_products_path" ) %>
+                              <%= link_to('后台管理<span class="glyphicon glyphicon-stats pull-right">'.html_safe,
+                                         admin_root_path) %>
                            </li>
                            <li role="separator" class="divider"></li>
                            <li>
