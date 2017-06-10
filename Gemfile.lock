@@ -67,6 +67,9 @@ GEM
       carrierwave (~> 1.0)
       qiniu (~> 6.8, >= 6.8.0)
     choice (0.2.0)
+    climate_control (0.2.0)
+    cocaine (0.5.8)
+      climate_control (>= 0.0.3, < 1.0)
     coderay (1.1.1)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -117,6 +120,7 @@ GEM
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (2.99.3)
+    mimemagic (0.3.2)
     mini_magick (4.7.0)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
@@ -126,6 +130,12 @@ GEM
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
     orm_adapter (0.5.0)
+    paperclip (5.1.0)
+      activemodel (>= 4.2.0)
+      activesupport (>= 4.2.0)
+      cocaine (~> 0.5.5)
+      mime-types
+      mimemagic (~> 0.3.0)
     pg (0.20.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
@@ -257,6 +267,7 @@ DEPENDENCIES
   letter_opener
   listen (~> 3.0.5)
   mini_magick
+  paperclip
   pg
   pry
   puma (~> 3.0)
