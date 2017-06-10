@@ -48,6 +48,7 @@ gem 'qiniu-rs'
 gem 'figaro'
 gem 'rails-erd'
 gem 'ancestry'
+gem 'will_paginate'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
