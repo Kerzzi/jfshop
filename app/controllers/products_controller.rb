@@ -1,4 +1,7 @@
 class ProductsController < ApplicationController
+
+  before_action :authenticate_user!, only: [:upvote, :downvote]
+
   def index
     fetch_home_data
     @products = Product.onshelf.page(params[:page] || 1).per_page(params[:per_page] || 12)
@@ -18,6 +21,18 @@ class ProductsController < ApplicationController
     else
       flash[:warning] = "你的购物车内已有此物品"
     end
+    redirect_to :back
+  end
+
+  def upvote
+    @product = Product.find(params[:id])
+    @product.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @product=Product.find(params[:id])
+    @product.downvote_by current_user
     redirect_to :back
   end
 end

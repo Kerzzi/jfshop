@@ -1,15 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'sessions/new'
-  end
-
-  namespace :admin do
-    get 'categories/index'
-  end
-
-  namespace :admin do
-    get 'categories/new'
-  end
 
   get 'static_pages/about'
 
@@ -43,6 +32,8 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      put "like", to: "products#upvote"
+      put "dislike", to: "products#downvote"
     end
   end
 

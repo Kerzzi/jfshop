@@ -23,6 +23,8 @@ class Product < ApplicationRecord
 
   has_one :main_product_image, -> { order(weight: 'desc') },class_name: :ProductImage
 
+  acts_as_votable
+
   before_create :set_default_attrs #产品创建之前生成唯一uuid
 
   scope :onshelf, -> { where(status: Status::On) }
