@@ -38,6 +38,8 @@ Rails.application.routes.draw do
     resources :orders
   end
 
+  resources :categories, only: [:show]
+
   resources :products do
     member do
       post :add_to_cart

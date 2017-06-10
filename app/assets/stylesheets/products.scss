@@ -12,3 +12,21 @@ input[type="file"] {
     border-radius: 4px
   }
 }
+
+/****** 商品列表简单样式 ******/
+
+ .list-group-item a {
+   display: block;
+ }
+ .msrp {
+   text-decoration: line-through;
+ }
+ .thumbnail {
+   height: 290px;
+   &.detail {
+     height: auto;
+   }
+   a.title {
+     color: #333;
+   }
+ }

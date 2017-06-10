@@ -1,5 +1,10 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+  before_action :fetch_home_data
+
+  def fetch_home_data
+    @categories = Category.grouped_data
+  end
 
   def admin_required
     if !current_user.admin?
