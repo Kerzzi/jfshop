@@ -35,6 +35,7 @@ Rails.application.routes.draw do
       put "like", to: "products#upvote"
       put "dislike", to: "products#downvote"
     end
+    resources :reviews
   end
 
   resources :carts do
