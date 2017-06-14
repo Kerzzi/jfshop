@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   resources :favorites
   resources :products do
+    get :search, on: :collection
     member do
       post :add_to_cart
       post :favorite
