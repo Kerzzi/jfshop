@@ -19,6 +19,8 @@
  @import "bootstrap";
  @import "font-awesome";
 
+ @import "social-share-button";
+
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
  /****** LOGIN MODAL（弹窗登录效果） ******/
@@ -115,3 +117,15 @@
  .login-help{
    font-size: 12px;
  }
+
+ /****** 分享按钮样式 ******/
+ $size: 24px;
+
+ .social-share-button {
+   .ssb-icon {
+     background-size: $size $size;
+     height: $size;
+     width: $size;
+   }
+ }
+ /****** 完成分享按钮样式 ******/
