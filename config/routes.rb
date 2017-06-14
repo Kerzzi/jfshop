@@ -30,9 +30,12 @@ Rails.application.routes.draw do
 
   resources :categories, only: [:show]
 
+  resources :favorites
   resources :products do
     member do
       post :add_to_cart
+      post :favorite
+      post :unfavorite
       put "like", to: "products#upvote"
       put "dislike", to: "products#downvote"
     end

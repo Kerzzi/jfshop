@@ -9,6 +9,12 @@ class User < ApplicationRecord
   end
 
   has_many :orders
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
+  has_many :favorites
+  has_many :favorite_products, :through => :favorites, :source => :product
+
+  def is_fan_of?(group)
+    favorite_products.include?(group)
+  end
 
 end
