@@ -1,17 +1,13 @@
 class ProductImage < ApplicationRecord
 
-    belongs_to :product
+  belongs_to :product
 
-    #指定图片尺寸
-    has_attached_file :image, styles: {
-      small: '60^x60',
-      middle: '200^x200',
-      big: "960x"
-    }
+  #指定图片存储的路径规则和图片尺寸
+  has_attached_file :image,:path => ":class/:attachment/:id/:basename.:extension"
 
-    #限制上传类型
-    validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
-    #限制上传图片的大小
-    validates_attachment_size :image, in: 0..5.megabytes
+  validates :image, :attachment_presence => true
+
+  #限制上传类型
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
 end

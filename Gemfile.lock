@@ -46,7 +46,7 @@ GEM
     ancestry (3.0.0)
       activerecord (>= 3.2.0)
     arel (7.1.4)
-    autoprefixer-rails (7.1.1)
+    autoprefixer-rails (7.1.1.2)
       execjs
     awesome_print (1.7.0)
     awesome_rails_console (0.4.0)
@@ -64,9 +64,9 @@ GEM
       activemodel (>= 4.0.0)
       activesupport (>= 4.0.0)
       mime-types (>= 1.16)
-    carrierwave-qiniu (1.1.0)
-      carrierwave (~> 1.0)
-      qiniu (~> 6.8, >= 6.8.0)
+    carrierwave-qiniu (0.1.8.2)
+      carrierwave
+      qiniu (~> 6.4.2)
     choice (0.2.0)
     climate_control (0.2.0)
     cocaine (0.5.8)
@@ -86,8 +86,6 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
-    domain_name (0.5.20170404)
-      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -97,8 +95,6 @@ GEM
       railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
-    http-cookie (1.0.3)
-      domain_name (~> 0.5)
     i18n (0.8.4)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -117,10 +113,10 @@ GEM
       rb-inotify (~> 0.9, >= 0.9.7)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.5)
+    mail (2.6.6)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
-    mime-types (2.99.3)
+    mime-types (2.4.3)
     mimemagic (0.3.2)
     mini_magick (4.7.0)
     mini_portile2 (2.2.0)
@@ -137,7 +133,10 @@ GEM
       cocaine (~> 0.5.5)
       mime-types
       mimemagic (~> 0.3.0)
-    pg (0.20.0)
+    paperclip-qiniu (0.2.0)
+      paperclip
+      qiniu (~> 6.4.1)
+    pg (0.21.0)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -146,10 +145,10 @@ GEM
       pry (>= 0.10.4)
     public_suffix (2.0.5)
     puma (3.9.1)
-    qiniu (6.8.1)
+    qiniu (6.4.2)
       json (~> 1.8)
-      mime-types (~> 2.4, >= 2.4.0)
-      rest-client (~> 2.0, >= 2.0.0)
+      mime-types (~> 2.4.3)
+      rest-client (~> 1.7.3)
       ruby-hmac (~> 0.4)
     qiniu-rs (1.1.0)
       json
@@ -193,10 +192,9 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
-    rest-client (2.0.2)
-      http-cookie (>= 1.0.2, < 2.0)
-      mime-types (>= 1.16, < 4.0)
-      netrc (~> 0.8)
+    rest-client (1.7.3)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     ruby-graphviz (1.2.3)
     ruby-hmac (0.4.0)
     sass (3.4.24)
@@ -233,9 +231,6 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
-    unf (0.1.4)
-      unf_ext
-    unf_ext (0.0.7.4)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -246,7 +241,7 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
-    will_paginate (3.1.5)
+    will_paginate (3.1.6)
 
 PLATFORMS
   ruby
@@ -270,6 +265,7 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mini_magick
   paperclip
+  paperclip-qiniu
   pg
   pry
   puma (~> 3.0)
