@@ -23,6 +23,166 @@
 
  @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+ @import url('https://fonts.googleapis.com/earlyaccess/notosanssc.css');   //引入google思源黑简在线字体 需要使用VPN才可生效
+
+
+ // 界面基础设置
+html, body {
+    /* 設定body高度為100% 拉到視窗可視的大小 */
+    height: 100%;
+}
+
+body {
+
+    background: #EBEBEB;
+    // background-image: url(https://ww1.sinaimg.cn/large/006tKfTcgy1fg7w2lnv7lj30ud0g8mxo.jpg);
+    font-family: 'Noto Sans SC', sans-serif;            // google思源黑简作为主字体
+    color: #666;                                        // 修改全站的 字体主色
+    // font-size: 1.2em;                                   // 网站所有字体缩小比例
+    .breadcrumb{
+    background: #fff;
+    height: 50px;
+    li{
+      padding-top: 7px;
+    }
+
+    }
+   a {                                                 // 所有a标签统一样式
+     color: #666;                                      // 链接反转的样式
+     transition: 0.5s;                                 // 鼠标移开时 0.5秒渐变
+   }
+   a:hover {
+     color: #7f8c8d;
+     transition: 0.5s;                                 // 鼠标指向时 0.5面渐变
+     text-decoration: none;                            // 移除下划线
+   }
+ }
+
+#id_wrapper {
+    /* 設定高度最小為100%, 如果內容區塊很多, 可以長大 */
+    min-height: 100%;
+    /* 位置設為relative, 作為footer區塊位置的參考 */
+    // position: relative;
+}
+
+#id_header {
+    /* 設定header的高度 */
+    height: 40px;
+    box-sizing: border-box;
+}
+
+#id_content {
+    /* 留出header及footer區塊的空間 */
+    padding-top: 25px;
+    // padding-bottom: 60px;
+}
+
+#id_footer {
+    /* 設定footer的高度 */
+    height: 40px;
+    box-sizing: border-box;
+    /* 設定footer絕對位置在底部 */
+    // position: absolute;
+    bottom: 0;
+    /* 展開footer寬度 */
+    width: 100%;
+}
+
+ /*===== navbar ====*/
+
+ .navbar-default {
+
+   margin-bottom: 0;
+   border-radius: 0;
+   background: #000;
+
+     color: #000 !important;
+     font-size: 1.2em;
+
+     a:focus {
+       color: #eb5424 !important;
+     }
+     &.show_bgcolor {
+       background-color: #02061A;
+     }
+
+     .navbar-header {
+       a {
+         font-size: 20px;
+         color: #fff;
+         transition: 0.35s;
+       }
+       a:hover {
+         color: #D0CFCE;
+       }
+     }
+     .navbar-nav li a {
+       color: #fff;
+       font-size: 16px;
+       transition: 0.35s;
+     }
+     .navbar-nav li a:hover {
+       color: #D0CFCE;
+       text-decoration: none
+     }
+
+     .navbar-nav .dropdown-menu {
+       padding-bottom: 0;
+       padding-top: 0;
+       a {
+         text-align: center;
+         color: #000;
+       }
+       li.divider:last-child {
+         display: none;
+       }
+     }
+     .login {
+       border: 1px solid #fff;
+       margin-top: 12px;
+       padding: 3px 17px 3px 17px;
+       margin-right: 130px;
+       border-radius: 15px;
+     }
+     .search-nav{
+       width: 280px;
+     }
+
+  }
+
+  .navbar-brand {
+    letter-spacing: 0.1em;       //拉开一点点字间距
+    font-weight:lighter;         //字体粗细比默认样式缩小100磅值，让logo显得精致高级
+  }
+ /*===== end of navbar ====*/
+
+ //---- footer ------
+
+ .footer{
+     text-align: center;
+     min-height: 50px;
+     background-color:  #000;
+     // margin-bottom: -50px;
+     padding: 20px 0;
+     color: #fff;
+     p{
+       font-size: 14px;
+       a{
+         // color: #4A6BB5;
+         text-decoration:none;
+         color: #fff;
+       }
+       a:hover{
+         color: #35CCC6;
+       }
+       a:focus{
+         color: #4A6BB5;
+       }
+     }
+ }
+
+ /*===== end of footer ====*/
+
  /****** LOGIN MODAL（弹窗登录效果） ******/
  .loginmodal-container {
    padding: 30px;
@@ -135,7 +295,7 @@
   .landing-page-mid {                                   //给图片整好形
     height: 534px;
     background-size: cover;                             //确保图片完全撑开
-    margin-top: 0px;
+    margin-top: -15px;
     background-position: center center;
     background-repeat: no-repeat;
     background-image: url(http://ww4.sinaimg.cn/large/006tNbRwgy1ffzzmaueitj31kw18s7wk.jpg);
